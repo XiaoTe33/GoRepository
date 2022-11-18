@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
 	"os"
 )
 
@@ -18,9 +20,9 @@ func main() {
 		fmt.Scan(&a)
 		switch a {
 		case 1:
-			login()
-		case 2:
 			register()
+		case 2:
+			start()
 		case 3:
 			return
 		default:
@@ -30,25 +32,26 @@ func main() {
 }
 func showMenu() {
 	fmt.Println("**********")
-	fmt.Println("* 1.登录 *")
-	fmt.Println("* 2.注册 *")
+	fmt.Println("* 1.注册 *")
+	fmt.Println("* 2.启动web *")
 	fmt.Println("* 3.退出 *")
 	fmt.Println("**********")
 }
-func login() {
-	username := ""
-	password := ""
-	fmt.Print("username:")
-	fmt.Scan(&username)
-	fmt.Print("password:")
-	fmt.Scan(&password)
-	readFromFile()
-	if userData[username] == password {
-		fmt.Println("login ok")
-	} else {
-		fmt.Println("fail to login")
-	}
-}
+
+//func login() {
+//	username := ""
+//	password := ""
+//	fmt.Print("username:")
+//	fmt.Scan(&username)
+//	fmt.Print("password:")
+//	fmt.Scan(&password)
+//	readFromFile()
+//	if userData[username] == password {
+//		fmt.Println("login ok")
+//	} else {
+//		fmt.Println("fail to login")
+//	}
+//}
 
 func register() {
 	username := ""
@@ -104,5 +107,21 @@ func readFromFile() {
 		}
 		fileData += string(buf[:n])
 	}
-	json.Unmarshal([]byte(fileData), userData)
+	json.Unmarshal([]byte(fileData), &userData)
+}
+
+func start() {
+	readFromFile()
+	r := gin.Default()
+	for k, v := range userData {
+		way := "/" + k + "/" + v
+		r.GET(way, func(c *gin.Context) {
+			c.JSON(http.StatusOK, "welcome")
+		})
+	}
+	err := r.Run(":8080")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
