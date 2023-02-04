@@ -1,8 +1,8 @@
 # 苏宁易购实战项目
 
-](https://console-docs.apipost.cn/preview/964bf1a9921afa9b/b2c4952490094e3e) [![GoDoc](https://pkg.go.dev/badge/github.com/XiaeTe33)](https://github.com/XiaoTe33/winter-examination)[![](https://img.shields.io/badge/FE_柳亦钦_(PIPI--1021)-#c586c0.svg)](https://github.com/PIPI-1021)[![](https://img.shields.io/badge/BE_刘力延_(XiaoTe33)-#43a1de.svg)](https://github.com/XiaoTe33)
+[![](https://img.shields.io/badge/docs-接_口_文_档-green.svg)](https://console-docs.apipost.cn/preview/964bf1a9921afa9b/b2c4952490094e3e) [![GoDoc](https://pkg.go.dev/badge/github.com/XiaeTe33)](https://github.com/XiaoTe33/winter-examination)[![](https://img.shields.io/badge/contributor-FE_柳亦钦_(PIPI--1021)-#c586c0.svg)](https://github.com/PIPI-1021)[![](https://img.shields.io/badge/contributor-BE_刘力延_(XiaoTe33)-#43a1de.svg)](https://github.com/XiaoTe33)
 
-##  实现的功能
+##  :rocket:实现的功能
 
 1. 用户
 
@@ -55,7 +55,7 @@
 
 
 
-## 亮点
+## :star2:亮点
 
 1. 加密存储
 
@@ -581,7 +581,6 @@
 8. 扫码登陆
 
    - 实现思路
-
      1. 用户点击验证码登录，前端发送请求生成一个五分钟有效期的二维码(里面是一个url)
      2. 后端返回前端一个二维码和轮询地址
      3. 前端轮询
@@ -688,11 +687,11 @@
       ```scss
       http://39.101.72.18:9090/RESTART/:key
       ```
-
+      
     - 导入数据
 
       ```scss
       go run ./src/utils/put/put.go
       ```
-
+      
       
