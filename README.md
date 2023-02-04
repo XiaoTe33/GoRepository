@@ -1,6 +1,6 @@
 # 苏宁易购实战项目
 
-[![](https://img.shields.io/badge/docs-接_口_文_档-green.svg)](https://console-docs.apipost.cn/preview/964bf1a9921afa9b/b2c4952490094e3e) [![GoDoc](https://pkg.go.dev/badge/github.com/XiaeTe33)](https://github.com/XiaoTe33/winter-examination)[![](https://img.shields.io/badge/FE-%E6%9F%B3%E4%BA%A6%E9%92%A6%20(PIPI--1021)-c586c0)](https://github.com/PIPI-1021)[![](https://img.shields.io/badge/BE-%E5%88%98%E5%8A%9B%E5%BB%B6%20(XiaoTe33)-43a1de)](https://github.com/XiaoTe33)
+[![](https://img.shields.io/badge/docs-接_口_文_档-green.svg)](https://console-docs.apipost.cn/preview/964bf1a9921afa9b/b2c4952490094e3e) [![GoDoc](https://pkg.go.dev/badge/github.com/XiaeTe33)](https://github.com/XiaoTe33/winter-examination) [![](https://img.shields.io/badge/FE-%E6%9F%B3%E4%BA%A6%E9%92%A6%20(PIPI--1021)-c586c0)](https://github.com/PIPI-1021) [![](https://img.shields.io/badge/BE-%E5%88%98%E5%8A%9B%E5%BB%B6%20(XiaoTe33)-43a1de)](https://github.com/XiaoTe33)
 
 ##  :rocket:实现的功能
 
@@ -581,7 +581,6 @@
 8. 扫码登陆
 
    - 实现思路
-
      1. 用户点击验证码登录，前端发送请求生成一个五分钟有效期的二维码(里面是一个url)
      2. 后端返回前端一个二维码和轮询地址
      3. 前端轮询
@@ -688,11 +687,11 @@
       ```scss
       http://39.101.72.18:9090/RESTART/:key
       ```
-
+      
     - 导入数据
 
       ```scss
       go run ./src/utils/put/put.go
       ```
-
+      
       
